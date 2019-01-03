@@ -7,12 +7,19 @@ const style = {
     }
 }
 
-const App = () => {
-    return (
-        <div className='ui container' style={style.fixTopMargin}>
-            <SearchBar />
-        </div>
-    )
+class App extends React.Component {
+
+    onSearchSubmit(term){
+        console.log(term);
+    }
+
+    render(){
+        return (
+            <div className='ui container' style={style.fixTopMargin}>
+                <SearchBar onSubmit={this.onSearchSubmit}/>
+            </div>
+        )
+    }
 }
 
 export default App;
