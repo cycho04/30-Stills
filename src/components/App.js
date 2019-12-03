@@ -11,21 +11,31 @@ const style = {
 
 class App extends React.Component {
 
-    state = { images: [] };
+    state = { images: [], noImage: false };
 
     onSearchSubmit = async (term) => {
-        const response = await unsplash.get('/search/photos', {
+        await unsplash.get(`/search/photos?per_page=30`, {
             params: { query: term }
         })
+        .then(res =>{
+            if (res.data.total === 0){
+                this.handleNoImage();
+            }
+            else{
+                this.setState({ images: res.data.results, noImage: false });
+            }
+        })
+    }
 
-        this.setState({ images: response.data.results });
+    handleNoImage = () => {
+        this.setState({ noImage: true });
     }
 
     render(){
         return (
             <div className='ui container' style={style.fixTopMargin}>
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <ImageList images={this.state.images} />
+                <ImageList images={this.state.images} noImage={this.state.noImage}/>
             </div>
         )
     }

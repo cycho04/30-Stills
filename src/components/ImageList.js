@@ -9,7 +9,7 @@ const ImageList = (props) => {
 
     return (
         <div className='image-list'>
-            {images}
+            {props.noImage ? 'No results found.' : images}
         </div>
     )
 }
