@@ -2,10 +2,11 @@ import React from 'react';
 import unsplash from '../api/unsplash';
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
+import Header from './Header';
 
 const style = {
     fixTopMargin : {
-        marginTop: '50px'
+        marginTop: '20px'
     }
 }
 
@@ -34,6 +35,7 @@ class App extends React.Component {
     render(){
         return (
             <div className='ui container' style={style.fixTopMargin}>
+                <Header />
                 <SearchBar onSubmit={this.onSearchSubmit} />
                 <ImageList images={this.state.images} noImage={this.state.noImage}/>
             </div>
