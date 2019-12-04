@@ -9,4 +9,13 @@
 
 .image-list img {
     width: 250px;
+    padding-top: 3rem;
+}
+
+
+.main-image {
+    display: block;
+    margin: 4rem auto;
+    max-width: 400px;
+    width: 100%;
 }

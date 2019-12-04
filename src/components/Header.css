@@ -1,0 +1,9 @@
+.header{
+    text-align: right;
+}
+
+.header-icon{
+    font-size: 2rem !important;
+    padding: 1rem;
+    color: #2f3640;
+}

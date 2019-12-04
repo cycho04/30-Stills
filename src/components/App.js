@@ -5,14 +5,14 @@ import ImageList from './ImageList';
 import Header from './Header';
 
 const style = {
-    fixTopMargin : {
-        marginTop: '20px'
+    mainShape : {
+        backgroundImage: 'linear-gradient(#F3F3F3, white)',
     }
 }
 
 class App extends React.Component {
 
-    state = { images: [], noImage: false };
+    state = { images: [], noImage: false, landingPage: true};
 
     onSearchSubmit = async (term) => {
         await unsplash.get(`/search/photos?per_page=30`, {
@@ -23,7 +23,7 @@ class App extends React.Component {
                 this.handleNoImage();
             }
             else{
-                this.setState({ images: res.data.results, noImage: false });
+                this.setState({ images: res.data.results, noImage: false, landingPage: false});
             }
         })
     }
@@ -34,10 +34,12 @@ class App extends React.Component {
 
     render(){
         return (
-            <div className='ui container' style={style.fixTopMargin}>
-                <Header />
-                <SearchBar onSubmit={this.onSearchSubmit} />
-                <ImageList images={this.state.images} noImage={this.state.noImage}/>
+            <div style={style.mainShape}>
+                <div className='ui container'>
+                    <Header />
+                    <SearchBar onSubmit={this.onSearchSubmit} />
+                    <ImageList images={this.state.images} noImage={this.state.noImage} landingPage={this.state.landingPage}/>
+                </div>
             </div>
         )
     }

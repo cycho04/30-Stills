@@ -1,10 +1,15 @@
 import React from 'react';
+import './Header.css';
 
 const Header = () => {
     return(
-        <div>
-            <i className='github icon'/>
-            <i className='linkedin icon'/>
+        <div className='header'>
+            <a href='https://www.linkedin.com/in/chrisycho' target="_blank">
+               <i className='linkedin icon header-icon'/> 
+            </a>
+            <a href='https://github.com/cycho04' target='_blank'>
+                <i className='github icon header-icon'/>   
+            </a>
         </div>
     )
 }
