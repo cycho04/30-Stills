@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
@@ -7,27 +8,36 @@ class SearchBar extends React.Component {
         this.state={ term: ''};
     }
 
-    //arrow function used instead of binding in constructor. else "this.state.term" is undefined
     onFormSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmit(this.state.term);
     }
 
+    handleChange = (e) => {
+        this.setState({term: e.target.value});
+    }
+
     render(){
+        const {term} = this.state;
+
         return (
             <div className='title-wrapper'> 
                 <h2 className='main'>30 STILLS</h2>
                 <div>
                     <form onSubmit={this.onFormSubmit} className='search-box'>
-                        <input  className='search-txt' placeholder='Search Images' type='text' value={this.state.term} onChange={(e) => this.setState({term: e.target.value})} />    
-                        <a className="search-btn">
+                        <input className='search-txt' placeholder='Search Images' type='text' value={term} onChange={this.handleChange} />    
+                        <button className="search-btn">
                             <i className='search icon search-icon'></i>
-                        </a> 
+                        </button> 
                     </form>    
                 </div>
             </div>
         )
     };
 };
+
+SearchBar.propTypes = {
+    onSubmit: PropTypes.func,
+}
 
 export default SearchBar;

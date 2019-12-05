@@ -1,18 +1,4 @@
 ## Image Search Engine
 
-- Live Demo: [YouTube Copy](https://my-youtube-mock.herokuapp.com/)
+- Live Demo: [YouTube Copy](https://laughing-brown-61dd44.netlify.com/)
 
-### User Options
-
-- Utilize search bar to look for photos.
-
-### Video Walkthrough
-
-
-### Technical Information
-
-- Image results powered by `unsplash API`
-
-- HTTP requests made with `axios`.
-
-- Bootstrapped with `create-react-app`.

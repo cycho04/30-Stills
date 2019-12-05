@@ -4,10 +4,10 @@ import './Header.css';
 const Header = () => {
     return(
         <div className='header'>
-            <a href='https://www.linkedin.com/in/chrisycho' target="_blank">
+            <a href='https://www.linkedin.com/in/chrisycho' target="_blank" rel="noopener noreferrer">
                <i className='linkedin icon header-icon'/> 
             </a>
-            <a href='https://github.com/cycho04' target='_blank'>
+            <a href='https://github.com/cycho04' target='_blank' rel="noopener noreferrer">
                 <i className='github icon header-icon'/>   
             </a>
         </div>

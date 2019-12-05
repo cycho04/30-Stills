@@ -1,8 +1,8 @@
 import React from 'react';
-import unsplash from '../api/unsplash';
-import SearchBar from './SearchBar';
-import ImageList from './ImageList';
-import Header from './Header';
+import unsplash from '../../api/unsplash';
+import SearchBar from '../SearchBar/SearchBar';
+import ImageList from '../ImageList/ImageList';
+import Header from '../Header/Header';
 
 const style = {
     mainShape : {
